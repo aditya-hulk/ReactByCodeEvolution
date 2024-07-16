@@ -276,6 +276,107 @@
 - 3rd approach better
 - 4rth is expreimental feature.
 # 15. Methods as props
+- humen previous video mein dekha ki how parent component communicate with child component with the help of props.
+- here we see how child component is communicate with parent component.
+- here also we use props
+-  here we pass
+    - a refrence to method as props to child component.
+### Create parent component
+## ***use rce for class component; rconst for constructor***
+![alt text](image-183.png)
+### Create Child Component
+## ***Use rfce for functional component***
+- hum yaha state use nhi kar rahe so stick with functional component
+
+![alt text](image-184.png)![alt text](image-185.png)![alt text](image-186.png)
+### Target - hum jab bhi child component ki Greet Parent button clk kare so parent component greetParent() method call ho;
+- so how communication done
+### At parent side
+![alt text](image-187.png)![alt text](image-188.png)![alt text](image-189.png)![alt text](image-190.png)
+- so we successfully call a method of parent component from the button present in child component.
+- by passing a method as props in child component.
+### Target: How to pass a parameter when calling the parent method from the child component.
+## Use arrow function to pass parameter
+![alt text](image-191.png)![alt text](image-192.png)![alt text](image-193.png)![alt text](image-194.png)
+### Scenario: we need to call method of parent from child.
+- Passing method reference  from Parent to child
+- Create method in Parent class
+- Pass method reference from parent to child
+- IN child grab this method refrence.
+### if You have to pass a parameter from child to parent 
+- use arrow function
+- U can also destructure props in functional component.
+    - but abhi 1 hi argument hai so leave it.
+# 16. Conditional rendering
+- u need to hide some html based on some condition
+- create class component using rce
+- rconst for constructor
+## 4 approaches
+![alt text](image-195.png)![alt text](image-196.png)![alt text](image-197.png)![alt text](image-198.png)![alt text](image-199.png)
+## Based on isLoginIn state i want particualar message to be displayed. isLoginIn state true myName display otherwise guest one.
+### If-else condition
+![alt text](image-200.png)![alt text](image-201.png)![alt text](image-202.png)![alt text](image-203.png)
+### kya hum if-else condition directly message par nhi laga sakte?
+- no, if-else statement don't work inside jsx.
+### Using element-variables approach
+![alt text](image-204.png)![alt text](image-205.png)![alt text](image-206.png)![alt text](image-207.png)
+### Using ternary conditional operator approach
+#### It can be used inside JSX
+![alt text](image-208.png)![alt text](image-209.png)![alt text](image-210.png)![alt text](image-211.png)![alt text](image-212.png)
+### Short-circuit operator approach
+#### If you want to render sth or nothing use this
+![alt text](image-213.png)![alt text](image-214.png)![alt text](image-215.png)![alt text](image-216.png)
+- Conditional or short circuit is best choice
+# 17. List rendering
+- Jab bhi webapp banaoge so there will be common scenario
+- aapko list of names,
+- list of products display karne honge.
+- use rfce shortcut for creating functional compoenent
+### Map method
+![alt text](image-217.png)
+### Focus
+![alt text](image-218.png)![alt text](image-219.png)![alt text](image-220.png)
+### Use map method to render the list of names
+![alt text](image-221.png)![alt text](image-222.png)
+### Variation
+![alt text](image-223.png)![alt text](image-224.png)
+### Other scnario
+![alt text](image-225.png)![alt text](image-226.png)
+### Refactor the jsx into separate component
+![alt text](image-227.png)![alt text](image-228.png)![alt text](image-229.png)
+- The list component is responsible for rendering list
+- the person component is responsible for rendering Person html
+### Observation
+![alt text](image-230.png)![alt text](image-231.png)
+- hume warning dikh rahi hai
+- each child in an array or itarator should have unique key prop.
+# 18. List and keys
+- When we render list of item in react. 
+- In console it give warning.
+    - i.e each child in an array or iterator should have unique "Key" prop
+    - mane har child ko prop chaiye jo hai key aur uski value usse unique hona.
+
+![alt text](image-232.png)
+### Variation-1
+![alt text](image-233.png)![alt text](image-234.png)
+- No warning visible
+### Vartion-2
+![alt text](image-235.png)![alt text](image-236.png)
+- key prop ye special attribute hai, u must include it while creating the list elements.
+- key prop, they are not accessible in child component.
+### variation-3
+![alt text](image-237.png)![alt text](image-238.png)
+### See console
+![alt text](image-239.png)
+- React keh raha hai, ki key prop mein use kar raha hu to render properly the content.
+- key prop is reserved for mein
+### Why do we need key prop
+![alt text](image-240.png)![alt text](image-241.png)![alt text](image-242.png)
+
+
+
+
+
 
 
 
